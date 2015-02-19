@@ -132,7 +132,7 @@ console.assert(dontTellNobody.squeal() === mySecret);
 
 // Create a constructor called `Key`. Create another constructor
 // called `Safe`. Make the Safe constructor take 2 arguments. The
-// first argument can be any piece if data to keep safe. This must
+// first argument can be any piece of data to keep safe. This must
 // be stored using a private variable like you did with KeepSecret.
 // The 2nd param to the `Safe` constructor needs to be an instance
 // of `Key` you need to store it privately as well. Add a function
@@ -142,7 +142,21 @@ console.assert(dontTellNobody.squeal() === mySecret);
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 
-var Key = (function)
+var Key;
+
+var Safe = (function (data, key) {
+  var lockAndKey = data;
+  key = new Key();
+
+});
+
+Safe.prototype = {
+  unlock: function(key) {
+    if (key === new Key()) {
+      return lockAndKey;
+    }
+  }
+};
 
 
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
